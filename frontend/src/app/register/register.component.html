@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="mb-3">
+                <h3>Register</h3>
+            </div>
+            <form [formGroup]="regForm">
+                <div class="mb-2">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+                    <span class="text-danger" *ngIf="regForm.controls.name.errors && regForm.controls.name.touched">Enter Valid Email</span>
+                </div>
+                <div class="mb-2">
+                    <label>Mobile</label>
+                    <input type="phone" class="form-control" placeholder="Enter Mobile" formControlName="mobile">
+                    <span class="text-danger" *ngIf="regForm.controls.mobile.errors && regForm.controls.mobile.touched">Enter Valid Email</span>
+                </div>
+                <div class="mb-2">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Enter Email" formControlName="email">
+                    <span class="text-danger" *ngIf="regForm.controls.email.errors && regForm.controls.email.touched">Enter Valid Email</span>
+                </div>
+                <div class="mb-2">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Enter Password" formControlName="password">
+                    <span class="text-danger" *ngIf="regForm.controls.password.errors && regForm.controls.password.touched">Enter Password</span>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success" (click)="register(regForm)" [disabled]="!regForm.valid">Register</button>
+                    <hr>
+                    <p class="text-center mb-0">If you already have an account <a routerLink="/login">Login Now</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
